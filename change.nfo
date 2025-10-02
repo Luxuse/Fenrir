@@ -1,0 +1,52 @@
+  _____                   .__        
+_/ ____\____   ___________|__|______ 
+\   __\/ __ \ /    \_  __ \  \_  __ \
+ |  | \  ___/|   |  \  | \/  ||  | \/
+ |__|  \___  >___|  /__|  |__||__|   
+           \/     \/                 alpha v0.17.3
+
+fix RU not showingcmd 
+add language v1
+fix correct zstd and tar for compression
+fix tar stream error for unpak 
+fix correct icon 
+add zstd unpacker
+fix compress.bat end zstd stream
+add encryption working / no zstd
+
+  _____                   .__        
+_/ ____\____   ___________|__|______ 
+\   __\/ __ \ /    \_  __ \  \_  __ \
+ |  | \  ___/|   |  \  | \/  ||  | \/
+ |__|  \___  >___|  /__|  |__||__|   
+           \/     \/                 alpha v0.16
+
+addon of zstd not working
+fix of reg and extraction
+fix hashing bug 
+fix miss name
+fix compress.bat
+fix hash.bat
+
+  _____                   .__        
+_/ ____\____   ___________|__|______ 
+\   __\/ __ \ /    \_  __ \  \_  __ \
+ |  | \  ___/|   |  \  | \/  ||  | \/
+ |__|  \___  >___|  /__|  |__||__|   
+           \/     \/                 alpha v0.15
+
+addon of hash with stelarc
+compress working made with stelarc bat 
+unpak working made with stelarc bat 
+fix name 
+fix reg typo and path
+
+  _____                   .__        
+_/ ____\____   ___________|__|______ 
+\   __\/ __ \ /    \_  __ \  \_  __ \
+ |  | \  ___/|   |  \  | \/  ||  | \/
+ |__|  \___  >___|  /__|  |__||__|   
+           \/     \/                 alpha v0
+
+add freearc and use file
+reg addon and setting for future use

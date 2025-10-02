@@ -1,0 +1,23 @@
+LICENCE D’UTILISATION – FENRIR (VERSION alpha v0.17.3)
+Dernière mise à jour : 02 octobre 2025
+1. Objet de la licence
+Cette licence vous accorde un droit d’utilisation non exclusif, non transférable et limité du logiciel Fenrir (ci-après « le Logiciel »), sous réserve de votre acceptation pleine et entière des présentes conditions.
+2. Acceptation des conditions
+En installant ou en utilisant le Logiciel, vous acceptez expressément les termes de cette licence ainsi que les licences des logiciels tiers intégrés ou utilisés par Fenrir. Vous reconnaissez avoir pris connaissance de ces licences et vous engagez à les respecter.
+3. Restrictions d’utilisation
+
+Interdiction de modification : Vous n’êtes pas autorisé à modifier, désassembler, décompiler ou tenter de reconstruire le Logiciel, sauf dans la mesure où la loi applicable l’autorise expressément.
+Interdiction de redistribution : Vous ne pouvez ni copier, ni distribuer, ni sous-licencier le Logiciel à des tiers, sauf autorisation écrite préalable de l’auteur.
+Utilisation personnelle : Le Logiciel est destiné à un usage personnel ou interne. Toute utilisation commerciale ou professionnelle doit faire l’objet d’un accord spécifique.
+
+4. Logiciels tiers
+Fenrir utilise des composants ou bibliothèques sous licence tierce. Vous devez vous conformer aux termes de ces licences, qui peuvent imposer des obligations supplémentaires. L’auteur de Fenrir ne fournit pas ces licences et décline toute responsabilité en cas de non-respect de celles-ci par l’utilisateur.
+5. Garanties et responsabilité
+
+Aucune garantie : Le Logiciel est fourni « en l’état », sans garantie d’aucune sorte, expresse ou implicite, y compris, mais sans s’y limiter, les garanties de qualité, de performance, de conformité ou d’absence de défauts.
+Limitation de responsabilité : L’auteur ne saurait être tenu responsable des dommages directs, indirects, accessoires ou consécutifs résultant de l’utilisation ou de l’impossibilité d’utiliser le Logiciel, y compris les pertes de données ou les interruptions d’activité.
+
+6. Résiliation
+Cette licence prend fin automatiquement en cas de violation de ses termes. Vous devez alors cesser toute utilisation du Logiciel et détruire toute copie en votre possession.
+7. Droit applicable
+Cette licence est régie par le droit français. Tout litige sera soumis à la compétence exclusive des tribunaux français.

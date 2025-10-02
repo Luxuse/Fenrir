@@ -1,0 +1,29 @@
+Windows Registry Editor Version 5.00
+
+; ========================================
+; Suppression - Fenrir menu contextuel
+; ========================================
+
+[-HKEY_CLASSES_ROOT\.arc]
+[-HKEY_CLASSES_ROOT\.fen]
+[-HKEY_CLASSES_ROOT\FenrirArchive]
+[-HKEY_CLASSES_ROOT\FenrirArchive\DefaultIcon]
+
+[-HKEY_CLASSES_ROOT\Directory\shell\fenrir_add]
+[-HKEY_CLASSES_ROOT\Directory\shell\add_to_archive]
+[-HKEY_CLASSES_ROOT\Directory\shell\add_to_archive\command]
+[-HKEY_CLASSES_ROOT\Directory\shell\extract]
+[-HKEY_CLASSES_ROOT\Directory\shell\extract\command]
+
+[-HKEY_CLASSES_ROOT\*\shell\fenrir_add]
+[-HKEY_CLASSES_ROOT\*\shell\fenrir_add\command]
+[-HKEY_CLASSES_ROOT\*\shell\add_to_archive]
+[-HKEY_CLASSES_ROOT\*\shell\add_to_archive\command]
+[-HKEY_CLASSES_ROOT\*\shell\extract]
+[-HKEY_CLASSES_ROOT\*\shell\extract\command]
+[-HKEY_CLASSES_ROOT\*\shell\fenrir_hash]
+[-HKEY_CLASSES_ROOT\*\shell\fenrir_hash\command]
+
+[-HKEY_CLASSES_ROOT\arcacArchive]
+[-HKEY_CLASSES_ROOT\arcacArchive\shell\extract]
+[-HKEY_CLASSES_ROOT\arcacArchive\shell\extract\command]

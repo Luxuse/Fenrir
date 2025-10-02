@@ -1,0 +1,81 @@
+Windows Registry Editor Version 5.00
+
+; ========================================
+; Fenrir - Menu contextuel compression
+; ========================================
+
+[HKEY_CLASSES_ROOT\.arc]
+@="arcacArchive"
+
+[HKEY_CLASSES_ROOT\.fen]
+@="FenrirArchive"
+
+[HKEY_CLASSES_ROOT\.zstd]
+@="FenrirArchive"
+
+[HKEY_CLASSES_ROOT\.rar]
+@="FenrirArchive"
+
+[HKEY_CLASSES_ROOT\.zip]
+@="FenrirArchive"
+
+[HKEY_CLASSES_ROOT\.7z]
+@="FenrirArchive"
+
+[HKEY_CLASSES_ROOT\.iso]
+@="FenrirArchive"
+
+[HKEY_CLASSES_ROOT\.pixel]
+@="FenrirArchive"
+
+
+; Option "Ajouter a l'archive" pour dossiers
+[HKEY_CLASSES_ROOT\Directory\shell\add_to_archive]
+@="Ajouter a l'archive Fenrir"
+"Icon"="C:\\ProgramData\\Fenrir\\reg-icon\\fenrir.ico"
+"MultiSelectModel"="Player"
+
+[HKEY_CLASSES_ROOT\Directory\shell\add_to_archive\command]
+@="cmd.exe /c \"C:\\ProgramData\\Fenrir\\compress.bat\" %1"
+
+; Option "Compresser avec Fenrir" pour fichiers
+[HKEY_CLASSES_ROOT\*\shell\fenrir_add]
+@="Compresser avec Fenrir"
+"Icon"="C:\\ProgramData\\Fenrir\\reg-icon\\fenrir.ico"
+"MultiSelectModel"="Player"
+
+[HKEY_CLASSES_ROOT\*\shell\fenrir_add\command]
+@="cmd.exe /c \"C:\\ProgramData\\Fenrir\\compress.bat\" %1"
+
+; Extraction (laissons telle quelle)
+[HKEY_CLASSES_ROOT\arcacArchive\shell\extract]
+@="Extraire ici"
+"Icon"="C:\\ProgramData\\Fenrir\\reg-icon\\fenrir.ico"
+
+[HKEY_CLASSES_ROOT\arcacArchive\shell\extract\command]
+@="cmd.exe /c \"\"C:\\ProgramData\\Fenrir\\Hati.bat\" %1\""
+
+[HKEY_CLASSES_ROOT\Directory\shell\extract]
+@="Extraire"
+"Icon"="C:\\ProgramData\\Fenrir\\reg-icon\\fenrir.ico"
+
+[HKEY_CLASSES_ROOT\Directory\shell\extract\command]
+@="cmd.exe /c \"if exist \"%1\" (C:\\ProgramData\\Fenrir\\Hati.bat \"%1\") else echo Dossier introuvable\""
+
+[HKEY_CLASSES_ROOT\*\shell\extract]
+@="Extraire ici"
+"Icon"="C:\\ProgramData\\Fenrir\\reg-icon\\fenrir.ico"
+
+[HKEY_CLASSES_ROOT\*\shell\extract\command]
+@="cmd.exe /c \"if exist \"%1\" (C:\\ProgramData\\Fenrir\\Hati.bat \"%1\") else echo Fichier introuvable\""
+
+; Hash (reste 1 fichier)
+[HKEY_CLASSES_ROOT\*\shell\fenrir_hash]
+@="Calculer le hash (Fenrir)"
+"Icon"="C:\\ProgramData\\Fenrir\\reg-icon\\fenrir.ico"
+
+[HKEY_CLASSES_ROOT\*\shell\fenrir_hash\command]
+@="cmd.exe /c \"\"C:\\ProgramData\\Fenrir\\hash.bat\" %1\""
+
+[HKEY_CLASSES_ROOT\FenrirArchive\DefaultIcon]
+@="C:\\ProgramData\\Fenrir\\reg-icon\\fenrir.ico"
