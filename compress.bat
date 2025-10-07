@@ -37,6 +37,7 @@ if "%LANG%"=="FR" (
   set "STR_ULTRA=ultra"
   set "STR_COMPRESSING_ZSTD=Compression avec Zstd niveau 19..."
   set "STR_COMPRESSING_FREEARC=Compression avec FreeArc"
+  set "STR_COMPRESSING_ZPAQ=Compression avec zpaqfranz"
   set "STR_TO=vers"
   set "STR_7ZIP_SELECT_LEVEL=7-Zip - selectionner le niveau de compression :"
   set "STR_BALANCED=equilibre"
@@ -69,6 +70,7 @@ if "%LANG%"=="FR" (
   set "STR_ULTRA=ультра"
   set "STR_COMPRESSING_ZSTD=Сжатие с Zstd уровень 19..."
   set "STR_COMPRESSING_FREEARC=Сжатие с FreeArc"
+  set "STR_COMPRESSING_ZPAQ=Сжатие с zpaqfranz"
   set "STR_TO=в"
   set "STR_7ZIP_SELECT_LEVEL=7-Zip - выберите уровень сжатия:"
   set "STR_BALANCED=сбалансированный"
@@ -101,6 +103,7 @@ if "%LANG%"=="FR" (
   set "STR_ULTRA=ultra"
   set "STR_COMPRESSING_ZSTD=Compressing with Zstd level 19..."
   set "STR_COMPRESSING_FREEARC=Compressing with FreeArc"
+  set "STR_COMPRESSING_ZPAQ=Compressing with zpaqfranz"
   set "STR_TO=to"
   set "STR_7ZIP_SELECT_LEVEL=7-Zip - select compression level:"
   set "STR_BALANCED=balanced"
@@ -232,11 +235,18 @@ if "%lvl%"=="3" (
         del "%baseName%.tar"
     ) else (
         :: If simple file, compress directly
-        "C:\ProgramData\Fenrir\_Freearc\zstd.exe" -19 -o "%inputNameExt%.zstd" "%inputNameExt%" || goto ERR
+        "C:\ProgramData\Fenrir\_Freearc\zstd.exe" -19 -o "%inputNameExt%.zstd" "%inputNameExt%"
+        if errorlevel 1 goto ERR
     )
     goto SUCCESS
 )
-if "%lvl%"=="4" set "mode=-i0 -mc:rep/maxsrep+razor"
+if "%lvl%"=="4" (
+    echo.
+    echo %STR_COMPRESSING_ZPAQ% %STR_TO% %baseName%.Zfen...
+    "C:\ProgramData\Fenrir\_Freearc\zpaqfranz.exe" add "%baseName%.Zfen" "%inputNameExt%" -m4 -t16
+    if errorlevel 1 goto ERR
+    goto SUCCESS
+)
 
 if not defined mode (
   echo %STR_INVALID_LEVEL%
@@ -250,7 +260,8 @@ if defined enc_method (
 ) else (
   set "enc_cmd="
 )
-"C:\ProgramData\Fenrir\_FreeArc\arc.exe" a "%baseName%.%ext%" %mode% %enc_cmd% "%inputNameExt%" || goto ERR
+"C:\ProgramData\Fenrir\_FreeArc\arc.exe" a "%baseName%.%ext%" %mode% %enc_cmd% "%inputNameExt%"
+if errorlevel 1 goto ERR
 goto SUCCESS
 
 :SEVENZ_LEVEL_MENU
@@ -278,7 +289,8 @@ if not defined mx (
 )
 echo.
 echo %STR_COMPRESSING_7ZIP% (%mx%) %STR_TO% %baseName%.%ext%...
-"C:\ProgramData\Fenrir\_FreeArc\7z.exe" a %mx% "%baseName%.%ext%" "%inputNameExt%" || goto ERR
+"C:\ProgramData\Fenrir\_FreeArc\7z.exe" a %mx% "%baseName%.%ext%" "%inputNameExt%"
+if errorlevel 1 goto ERR
 goto SUCCESS
 
 :SUCCESS

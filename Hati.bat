@@ -26,6 +26,7 @@ if "%LANG%"=="FR" (
   set "STR_EXTRACT_WITH_7ZIP=Extraction avec 7-Zip..."
   set "STR_EXTRACT_WITH_7Z=Extraction avec 7z..."
   set "STR_EXTRACT_WITH_SHARKY=Extraction avec Sharky..."
+  set "STR_EXTRACT_WITH_ZPAQ=Extraction avec zpaqfranz..."
   set "STR_EXTRACT_WITH_FREEARC=Extraction avec FreeArc..."
   set "STR_SUCCESS=Extraction terminee avec succes."
   set "STR_FAILED=Erreur : l'extraction a echoue."
@@ -41,6 +42,7 @@ if "%LANG%"=="FR" (
   set "STR_EXTRACT_WITH_7ZIP=Извлечение с 7-Zip..."
   set "STR_EXTRACT_WITH_7Z=Извлечение с 7z..."
   set "STR_EXTRACT_WITH_SHARKY=Извлечение с Sharky..."
+  set "STR_EXTRACT_WITH_ZPAQ=Извлечение с zpaqfranz..."
   set "STR_EXTRACT_WITH_FREEARC=Извлечение с FreeArc..."
   set "STR_SUCCESS=Извлечение завершено успешно."
   set "STR_FAILED=Ошибка: извлечение не удалось."
@@ -56,6 +58,7 @@ if "%LANG%"=="FR" (
   set "STR_EXTRACT_WITH_7ZIP=Extracting with 7-Zip..."
   set "STR_EXTRACT_WITH_7Z=Extracting with 7z..."
   set "STR_EXTRACT_WITH_SHARKY=Extracting with Sharky..."
+  set "STR_EXTRACT_WITH_ZPAQ=Extracting with zpaqfranz..."
   set "STR_EXTRACT_WITH_FREEARC=Extracting with FreeArc..."
   set "STR_SUCCESS=Extraction completed successfully."
   set "STR_FAILED=Error: extraction failed."
@@ -127,6 +130,10 @@ if /i "!fileExt!"==".bz2" (
     echo %STR_EXTRACT_WITH_7Z%
     set "outDir=!fileDir:~0,-1!"
     "C:\ProgramData\Fenrir\_Freearc\7z.exe" x "!normalizedPath!" -o"!fileDir!" -y || goto :ERR
+) else if /i "!fileExt!"==".Zfen" (
+    echo %STR_EXTRACT_WITH_ZPAQ%
+    set "outDir=!fileDir:~0,-1!"
+    "C:\ProgramData\Fenrir\_Freearc\zpaqfranz.exe" x "!normalizedPath!" || goto :ERR
 ) else (
     echo %STR_EXTRACT_WITH_FREEARC%
     "C:\ProgramData\Fenrir\_Freearc\arc.exe" x "!normalizedPath!" -o+ || goto :ERR

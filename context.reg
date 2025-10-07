@@ -10,6 +10,9 @@ Windows Registry Editor Version 5.00
 [HKEY_CLASSES_ROOT\.fen]
 @="FenrirArchive"
 
+[HKEY_CLASSES_ROOT\.Zfen]
+@="FenrirArchive"
+
 [HKEY_CLASSES_ROOT\.zstd]
 @="FenrirArchive"
 
