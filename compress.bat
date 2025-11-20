@@ -31,8 +31,8 @@ if "%LANG%"=="FR" (
   set "STR_ENTER_METHOD=Entrer la methode complete (ex: aes+serpent/cfb+twofish) :"
   set "STR_ENTER_PASSWORD=Entrer le mot de passe :"
   set "STR_SELECT_LEVEL=FreeArc - selectionner le niveau de compression :"
-  set "STR_SMALL_TEXT=petit texte"
-  set "STR_FAST=rapide"
+  set "STR_SMALL_TEXT=rapide"
+  set "STR_FAST=normal"
   set "STR_GOOD=bon (sans chiffrement)"
   set "STR_ULTRA=ultra"
   set "STR_COMPRESSING_ZSTD=Compression avec Zstd niveau 19..."
@@ -97,11 +97,11 @@ if "%LANG%"=="FR" (
   set "STR_ENTER_METHOD=Enter full method (e.g. aes+serpent/cfb+twofish):"
   set "STR_ENTER_PASSWORD=Enter password:"
   set "STR_SELECT_LEVEL=FreeArc - select compression level:"
-  set "STR_SMALL_TEXT=small text"
-  set "STR_FAST=fast"
+  set "STR_SMALL_TEXT=fast"
+  set "STR_FAST=normal"
   set "STR_GOOD=good (no encryption)"
   set "STR_ULTRA=ultra"
-  set "STR_COMPRESSING_ZSTD=Compressing with Zstd level 19..."
+  set "STR_COMPRESSING_ZSTD=Compressing with Zstd level 11..."
   set "STR_COMPRESSING_FREEARC=Compressing with FreeArc"
   set "STR_COMPRESSING_ZPAQ=Compressing with zpaqfranz"
   set "STR_TO=to"
@@ -218,8 +218,8 @@ echo   4. %STR_ULTRA%
 echo.
 set "mode="
 set /p "lvl=%STR_CHOICE% (1-4): "
-if "%lvl%"=="1" set "mode=-i0 -mc:rep/maxsrep+razor"
-if "%lvl%"=="2" set "mode=-m2x -s;"
+if "%lvl%"=="1" set "mode=-mtor:3:8mb"
+if "%lvl%"=="2" set "mode=-m3x -s;"
 if "%lvl%"=="3" (
     echo.
     echo %STR_COMPRESSING_ZSTD%
@@ -229,13 +229,13 @@ if "%lvl%"=="3" (
         "C:\ProgramData\Fenrir\_Freearc\bsdtar.exe" -cf "%baseName%.tar" "%inputNameExt%"
         if errorlevel 1 goto ERR
         :: Compress tar with Zstd
-        "C:\ProgramData\Fenrir\_Freearc\zstd.exe" -19 -o "%baseName%.tar.zstd" "%baseName%.tar"
+        "C:\ProgramData\Fenrir\_Freearc\zstd.exe" -11 -v -o "%baseName%.tar.zstd" "%baseName%.tar"
         if errorlevel 1 goto ERR
         :: Delete temporary tar
         del "%baseName%.tar"
     ) else (
         :: If simple file, compress directly
-        "C:\ProgramData\Fenrir\_Freearc\zstd.exe" -19 -o "%inputNameExt%.zstd" "%inputNameExt%"
+        "C:\ProgramData\Fenrir\_Freearc\zstd.exe" -11 -v -o "%inputNameExt%.zstd" "%inputNameExt%"
         if errorlevel 1 goto ERR
     )
     goto SUCCESS
@@ -243,7 +243,7 @@ if "%lvl%"=="3" (
 if "%lvl%"=="4" (
     echo.
     echo %STR_COMPRESSING_ZPAQ% %STR_TO% %baseName%.Zfen...
-    "C:\ProgramData\Fenrir\_Freearc\zpaqfranz.exe" add "%baseName%.Zfen" "%inputNameExt%" -m4 -t16
+    "C:\ProgramData\Fenrir\_Freearc\zpaqfranz.exe" add "%baseName%.Zfen" "%inputNameExt%" -m3 -t16
     if errorlevel 1 goto ERR
     goto SUCCESS
 )

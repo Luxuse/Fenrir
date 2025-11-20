@@ -3,10 +3,12 @@ _/ ____\____   ___________|__|______
 \   __\/ __ \ /    \_  __ \  \_  __ \
  |  | \  ___/|   |  \  | \/  ||  | \/
  |__|  \___  >___|  /__|  |__||__|   
-           \/     \/                 alpha v0.18.0
+           \/     \/                 alpha v0.19.1
                                                 
 
 add zpaqfranz v63.4 for ultra
+change compression option
+fix space bug
 
 
 
